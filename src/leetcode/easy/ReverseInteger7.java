@@ -1,4 +1,4 @@
-package easy;
+package leetcode.easy;
 
 public class ReverseInteger7 {
     public static void main(String args[]) {

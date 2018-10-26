@@ -1,2 +1,5 @@
-/.idea
-*.iml
+leetcode.iml
+.idea\
+out\
+.idea
+.idea\*
