@@ -1,26 +1,6 @@
 package leetcode.easy;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 public class PalindromeNumber9 {
-
-    @Test
-    public void testNegative121(){
-        assertFalse(isPalindrome(-121));
-    }
-
-    @Test
-    public void test121(){
-        assertTrue(isPalindrome(121));
-    }
-
-    @Test
-    public void test1221(){
-        assertTrue(isPalindrome(1221));
-    }
 
     public boolean isPalindrome(int x) {
 //        String s= ""+x;

@@ -5,18 +5,14 @@ import java.util.Map;
 
 public class TwoSum {
 
-    public static void main(String args[]) {
-        TwoSum s = new TwoSum();
-        int nums[] = {3, 2, 4};
-        int target = 6;
-        s.twoSum(nums, target);
-    }
-
+    /*
+    time is O(n^2) is not good
+     */
     public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 1; j < nums.length; j++) {
                 if ((nums[i] + nums[j]) == target) {
-                    int result[] = new int[2];
+                    int[] result = new int[2];
                     result[0] = i;
                     result[1] = j;
                     return result;
@@ -25,10 +21,11 @@ public class TwoSum {
         }
         return new int[2];
     }
-}
 
-class Leetcode {
-    public int[] twoSum(int[] nums, int target) {
+    /*
+    this is better only O(n)
+     */
+    public int[] twoSumLeetCode(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
