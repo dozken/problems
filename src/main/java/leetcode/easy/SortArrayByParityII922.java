@@ -1,6 +1,6 @@
 package leetcode.easy;
 
-public class SortArrayByParityII922 {
+class SortArrayByParityII922 {
     public int[] sortArrayByParityII(int[] A) {
         int length = A.length;
         int[] result = new int[length];

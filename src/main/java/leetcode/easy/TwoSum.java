@@ -3,7 +3,7 @@ package leetcode.easy;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+class TwoSum {
 
     /*
     time is O(n^2) is not good

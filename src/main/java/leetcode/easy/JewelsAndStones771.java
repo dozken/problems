@@ -1,6 +1,6 @@
 package leetcode.easy;
 
-public class JewelsAndStones771 {
+class JewelsAndStones771 {
     public int numJewelsInStones(String J, String S) {
         int jewelStoneCount = 0;
 

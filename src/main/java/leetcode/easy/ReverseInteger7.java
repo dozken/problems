@@ -1,4 +1,4 @@
 package leetcode.easy;
 
-public class ReverseInteger7 {
+class ReverseInteger7 {
 }

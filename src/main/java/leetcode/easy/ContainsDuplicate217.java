@@ -4,9 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 class ContainsDuplicate217 {
-    boolean containsDuplicate(int[] nums) {
+    boolean containsDuplicate(int[] numbers) {
         Set<Integer> set = new HashSet<>();
-        for (int i : nums) {
+        for (int i : numbers) {
             if (!set.add(i)) {
                 return true;
             }
