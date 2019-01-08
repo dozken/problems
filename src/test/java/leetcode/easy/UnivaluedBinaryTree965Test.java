@@ -3,7 +3,8 @@ package leetcode.easy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class UnivaluedBinaryTree965Test {
 
@@ -14,11 +15,10 @@ class UnivaluedBinaryTree965Test {
         test = new UnivaluedBinaryTree965();
 
 
-
     }
 
     @Test
-    void isUnivalTree(){
+    void isUnivalTree() {
 //        [9,9,6,9,9]
 
         UnivaluedBinaryTree965.TreeNode tree = new UnivaluedBinaryTree965.TreeNode(9);
@@ -34,17 +34,17 @@ class UnivaluedBinaryTree965Test {
     }
 
     @Test
-    void test(){
+    void test() {
         boolean a = false;
         boolean b = true;
-        boolean test = a || check(10);
+        boolean test = check(10);
         assertTrue(test);
     }
 
-    boolean check(int a){
+    boolean check(int a) {
         System.out.println("here??");
 
-        if(a>10) return check(a/2);
+        if (a > 10) return check(a / 2);
         else return true;
     }
 }

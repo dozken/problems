@@ -1,4 +1,4 @@
 package leetcode.easy;
 
-public class MergeTwoSortedLists21 {
+class MergeTwoSortedLists21 {
 }

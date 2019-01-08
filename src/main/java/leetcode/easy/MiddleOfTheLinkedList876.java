@@ -1,6 +1,6 @@
 package leetcode.easy;
 
-public class MiddleOfTheLinkedList876 {
+class MiddleOfTheLinkedList876 {
 
     public ListNode middleNode(ListNode head) {
         int i = 0;

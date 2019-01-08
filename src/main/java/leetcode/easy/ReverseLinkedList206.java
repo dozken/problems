@@ -1,6 +1,6 @@
 package leetcode.easy;
 
-public class ReverseLinkedList206 {
+class ReverseLinkedList206 {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode result = head;
@@ -26,7 +26,7 @@ public class ReverseLinkedList206 {
         return prev;
     }
 
-    public ListNode reverseListC(ListNode head) {
+    private ListNode reverseListC(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode p = reverseListC(head.next);
         head.next.next = head;
