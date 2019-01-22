@@ -7,6 +7,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Testing {
 
     @Test
+    public void test(){
+        int x = 3;
+        int y = 7;
+        y=(x+y) - (x=y);
+
+        System.out.printf("x=%d y=%d",x,y);
+        int[] a = null;
+    }
+
+    @Test
     public void check(){
         int[] arr = {3, 3, 2, 3, 6, 2, 1};
         int k = 4;
