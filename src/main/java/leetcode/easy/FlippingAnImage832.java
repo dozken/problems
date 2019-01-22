@@ -15,4 +15,19 @@ public class FlippingAnImage832 {
         return flipped;
     }
 
+
+    public int[][] flipAndInvertImageB(int[][] A) {
+        int[][] flipped = new int[A.length][A.length];
+        for(int i1=0, i2=0; i1 < A.length; i1++, i2++){
+            for(int j1=A.length-1, j2=0; j1>=A.length/2; j1--, j2++){
+                int temp = A[i2][j2];
+                A[i2][j2] = A[i1][j1];
+                A[i1][j1] = temp;
+            }
+            for(int j1=0; j1 < A[i1].length; j1++){
+                A[i1][j1] ^= 1;
+            }
+        }
+        return A;
+    }
 }
