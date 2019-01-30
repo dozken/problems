@@ -1,94 +1,111 @@
 package leetcode.easy;
 
-public class DesignLinkedList707 {
-    public static class MyLinkedList {
-        private int val;
-        private MyLinkedList next;
+class MyLinkedList {
 
-        private MyLinkedList head;
-
-        /** Initialize your data structure here. */
-        public MyLinkedList() {
-            head = this;
-            next = null;
-        }
-
-        /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
-        public int get(int index) {
-            int count = 0;
-            MyLinkedList cursor = head;
-            while(cursor!=null){
-                if(count==index){
-                    return cursor.val;
-                }
-                cursor = cursor.next;
-                count++;
-            }
-            return -1;
-        }
-
-        /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
-        public void addAtHead(int val) {
-            head.val = val;
-        }
-
-        /** Append a node of value val to the last element of the linked list. */
-        public void addAtTail(int val) {
-            head.next = new MyLinkedList();
-            head.next.val = val;
-        }
-
-        /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
-        public void addAtIndex(int index, int val) {
-            int count = 0;
-            MyLinkedList cursor = head;
-            MyLinkedList prev = cursor;
-            while(cursor!=null){
-                if(count==index){
-                    MyLinkedList temp = cursor;
-                    cursor.next = temp;
-                    cursor.val = val;
-                    return;
-                }
-                prev = cursor;
-                cursor = cursor.next;
-                count++;
-            }
-
-            if(count==index){
-                prev.next = new MyLinkedList();
-                prev.next.val = val;
-            }
-
-
-        }
-
-        /** Delete the index-th node in the linked list, if the index is valid. */
-        public void deleteAtIndex(int index) {
-            int count = 0;
-            MyLinkedList cursor = head;
-            MyLinkedList prev = cursor;
-            while(cursor!=null){
-                if(count==index){
-                    prev.next = cursor.next;
-                    // cursor = cursor.next;
-                    cursor = null;
-                    return;
-                }
-                prev = cursor;
-                cursor = cursor.next;
-                count++;
-            }
+    /** Initialize your data structure here. */
+    int length;
+    private Node head;
+    class Node {
+        int val;
+        Node next;
+        Node(int x) {
+            this.val = x;
         }
     }
 
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * MyLinkedList obj = new MyLinkedList();
- * int param_1 = obj.get(index);
- * obj.addAtHead(val);
- * obj.addAtTail(val);
- * obj.addAtIndex(index,val);
- * obj.deleteAtIndex(index);
- */
+    public MyLinkedList(){
+        this.length = 0;
+        this.head = null;
+    }
+
+
+    /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
+    public int get(int index) {
+        if(index < 0 || index >= this.length) {
+            return -1;
+        }
+        else {
+            int counter = 0;
+            Node curr = head;
+            while(counter != (index)) {
+                curr = curr.next;
+                counter++;
+            }
+            return curr.val;
+        }
+
+    }
+
+    /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
+    private void addAtHead(int val) {
+        Node newNode = new Node(val);
+        newNode.next = this.head;
+        this.head = newNode;
+        this.length++;
+    }
+
+    /** Append a node of value val to the last element of the linked list. */
+    private void addAtTail(int val) {
+        if(this.length == 0) {
+            addAtHead(val);
+            return;
+        }
+        Node newNode = new Node(val);
+        Node temp = head;
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        newNode.next = null;
+        this.length++;
+    }
+
+    /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
+    public void addAtIndex(int index, int val) {
+        Node newNode = new Node(val);
+        Node temp = head;
+        int counter = 0;
+        if((index) == this.length) {
+            addAtTail(val);
+            return;
+        }
+        if(index > this.length) {
+            return;
+        }
+        if(index == 0){
+            addAtHead(val);
+            return;
+        }
+        while(counter != (index -1)) {
+            temp = temp.next;
+            counter++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+        this.length++;
+    }
+
+    /** Delete the index-th node in the linked list, if the index is valid. */
+    public void deleteAtIndex(int index) {
+
+        if(index < 0 || index >= this.length) {
+            return;
+        }
+        Node curr = head;
+        if(index == 0) {
+            head = curr.next;
+        }
+        else {
+            Node current = head;
+            Node pre = null;
+            int counter =0;
+            while(counter != index) {
+                pre = current;
+                current = current.next;
+                counter++;
+            }
+            pre.next = current.next;
+            this.length--;
+        }
+    }
 }
