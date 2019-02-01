@@ -1,5 +1,8 @@
 package leetcode.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RansomNote383 {
     //	33 ms	java
     public boolean canConstruct(String ransomNote, String magazine) {
