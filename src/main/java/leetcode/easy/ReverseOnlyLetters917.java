@@ -28,5 +28,40 @@ public class ReverseOnlyLetters917 {
         }
         return new String(chars);
     }
-    
+
+    public String reverseOnlyLettersB(String S) {
+        if (S == null)
+            throw new IllegalArgumentException("String is null");
+        if (S.length() < 2)
+            return S;
+
+        char[] chars = S.toCharArray();
+        int leftIndex = 0;
+        int rightIndex = chars.length - 1;
+        char temp;
+        while (leftIndex < rightIndex) {
+            boolean isLeftLetter = isLetter(chars[leftIndex]);
+            boolean isRightLetter = isLetter(chars[rightIndex]);
+
+            if (!isLeftLetter) {
+                leftIndex++;
+            }
+            if (!isRightLetter) {
+                rightIndex--;
+            }
+            if (isLeftLetter && isRightLetter) {
+                temp = chars[leftIndex];
+                chars[leftIndex] = chars[rightIndex];
+                chars[rightIndex] = temp;
+                leftIndex++;
+                rightIndex--;
+            }
+        }
+        return String.valueOf(chars);
+    }
+
+    private boolean isLetter(char aChar) {
+        return ((aChar >= 'A') && (aChar <= 'Z')) || ((aChar >= 'a') && (aChar <= 'z'));
+    }
+
 }
