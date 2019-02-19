@@ -3,7 +3,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 public class OtherTesting {
 
@@ -12,35 +11,36 @@ public class OtherTesting {
         int a = 5;
         // this will not compile !!!
 //        if(a == null)
+        System.out.println(Math.ceil(3.2));
     }
 
-    @Test
-    public void arrayCreation() {
-        int[] a = new int[1];
-        int[][] b = new int[1][1];
-        int[][][] c = new int[1][1][];
-
-        System.out.println("A");
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
-
-        System.out.println("B");
-        for (int i = 0; i < b.length; i++) {
-            for (int j = 0; j < b[i].length; j++) {
-                System.out.println(b[i]);
-            }
-        }
-
-        System.out.println("C");
-        for (int i = 0; i < c.length; i++) {
-            for (int j = 0; j < c[i].length; j++) {
-                for (int k = 0; k < c[i][j].length; k++) {
-                    System.out.println(c[i][j][k]);
-                }
-            }
-        }
-    }
+//    @Test
+//    public void arrayCreation() {
+//        int[] a = new int[1];
+//        int[][] b = new int[1][1];
+//        int[][][] c = new int[1][1][];
+//
+//        System.out.println("A");
+//        for (int i1 : a) {
+//            System.out.println(i1);
+//        }
+//
+//        System.out.println("B");
+//        for (int[] ints1 : b) {
+//            for (int j = 0; j < ints1.length; j++) {
+//                System.out.println(ints1);
+//            }
+//        }
+//
+//        System.out.println("C");
+//        for (int[][] ints : c) {
+//            for (int j = 0; j < ints.length; j++) {
+//                for (int k = 0; k < ints[j].length; k++) {
+//                    System.out.println(ints[j][k]);
+//                }
+//            }
+//        }
+//    }
 
     @Test
     public void arrayListCheck() {
@@ -57,16 +57,6 @@ public class OtherTesting {
         assertEquals(size, 4);
     }
 
-    public int checkPrimitiveInt(int a) {
-        int b = Integer.parseInt(null);
-        Integer candidate = null;
-        return candidate;
-    }
-
-    @Test
-    public void checkPrimitiveInt() {
-        assertNull(checkPrimitiveInt(1));
-    }
 
 
 }

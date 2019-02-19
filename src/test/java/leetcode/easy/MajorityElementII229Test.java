@@ -2,10 +2,6 @@ package leetcode.easy;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MajorityElementII229Test {
 
@@ -17,8 +13,8 @@ class MajorityElementII229Test {
     void majorityElementB() {
         MajorityElementII229 test = new MajorityElementII229();
         int[] nums = {1,1,1,2,2,3,3,3};
-        List<Integer> integers = test.majorityElementB(nums);
+//        List<Integer> integers = test.majorityElementC(nums);
 
-        assertEquals(Arrays.asList(1,2), integers);
+//        assertEquals(Arrays.asList(1,2), integers);
     }
 }

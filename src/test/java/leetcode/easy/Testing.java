@@ -6,15 +6,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Testing {
 
-    @Test
-    public void test(){
-        int x = 3;
-        int y = 7;
-        y=(x+y) - (x=y);
-
-        System.out.printf("x=%d y=%d",x,y);
-        int[] a = null;
-    }
+//    @Test
+//    public void test(){
+//        int x = 3;
+//        int y = 7;
+//        y=(x+y) - (x=y);
+//
+//        System.out.printf("x=%d y=%d",x,y);
+//        int[] a = null;
+//    }
 
     @Test
     public void check(){
@@ -22,7 +22,8 @@ public class Testing {
         int k = 4;
         assertTrue(canPartitionKSubsets(arr, k));
     }
-    public boolean canPartitionKSubsets(int[] arr, int k) {
+
+    private boolean canPartitionKSubsets(int[] arr, int k) {
 
   /*
     Get the sum of all items in the array. We will use this to
@@ -50,8 +51,8 @@ public class Testing {
         return canPartition(0, arr, new boolean[arr.length], k, 0, sumOfAllArrayItems / k);
     }
 
-    boolean canPartition(int iterationStart, int[] arr, boolean[] used, int k,
-                         int inProgressBucketSum, int targetBucketSum) {
+    private boolean canPartition(int iterationStart, int[] arr, boolean[] used, int k,
+                                 int inProgressBucketSum, int targetBucketSum) {
 
   /*
     If we have filled all k - 1 buckets up to this point and we are now on
