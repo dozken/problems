@@ -2,6 +2,10 @@ package leetcode.easy;
 
 public class FibonacciNumber509 {
 
+    //Runtime: 1 ms, faster than 100.00% of Java online submissions for Fibonacci Number.
+    //Memory Usage: 35.1 MB, less than 98.82% of Java online submissions for Fibonacci Number.
+    // time O(n)
+    // space O(1)
     int fib(int N) {
         if (N < 2)
             return N;
