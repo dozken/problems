@@ -2,9 +2,23 @@ package leetcode.easy;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Testing {
+
+    @Test
+    public void toArrayTest() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+
+//        list.toArray(new int[0]);
+        Integer[] integers = list.toArray(new Integer[0]);
+
+//        int[] result = integers;
+    }
 
 //    @Test
 //    public void test(){
