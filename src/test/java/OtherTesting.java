@@ -1,11 +1,42 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 
 public class OtherTesting {
 
+
+    @Test
+    void testDateMethodReference() {
+
+        class SalaryValue {
+
+            private BigDecimal value;
+            private LocalDate date;
+
+            public BigDecimal getValue() {
+                return value;
+            }
+
+            public LocalDate getDate() {
+                return date;
+            }
+
+        }
+
+        List<SalaryValue> values = new ArrayList<>();
+
+        LocalDate maxDate = LocalDate.now();
+        Optional<SalaryValue> optSalary = values.stream()
+                .filter(x -> x.getDate().compareTo(maxDate) < 1)
+                .max(Comparator.comparing(SalaryValue::getDate));
+    }
     @Test
     public void nullCheck(){
         int a = 5;
