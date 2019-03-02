@@ -11,9 +11,14 @@ import static org.junit.Assert.assertEquals;
 
 public class OtherTesting {
 
+    @Test
+    public void charTest() {
+        System.out.println((char) ('A' - 1));
+        System.out.println(52 % 25);
+    }
 
     @Test
-    void testDateMethodReference() {
+    public void testDateMethodReference() {
 
         class SalaryValue {
 
