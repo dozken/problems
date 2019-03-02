@@ -1,7 +1,7 @@
 package leetcode.easy;
 
 public class ExcelSheetColumnNumber171 {
-    
+
     public int titleToNumber(String s) {
         if (s == null || s.isEmpty()) return 0;
 
