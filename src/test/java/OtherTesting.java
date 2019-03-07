@@ -8,8 +8,24 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class OtherTesting {
+
+    @Test
+    public void testLocalDate() {
+        LocalDate date1 = LocalDate.now();
+        LocalDate date2 = LocalDate.now();
+
+        LocalDate date = LocalDate.now();
+
+        boolean check = (date.isEqual(date1) || date.isAfter(date1))
+                && (date.isEqual(date2) || date.isAfter(date2));
+
+        boolean check2 = date.compareTo(date1) >= 0 && date.compareTo(date2) <= 0;
+
+        assertTrue(check && check2);
+    }
 
     @Test
     public void charTest() {
@@ -42,8 +58,9 @@ public class OtherTesting {
                 .filter(x -> x.getDate().compareTo(maxDate) < 1)
                 .max(Comparator.comparing(SalaryValue::getDate));
     }
+
     @Test
-    public void nullCheck(){
+    public void nullCheck() {
         int a = 5;
         // this will not compile !!!
 //        if(a == null)
@@ -92,7 +109,6 @@ public class OtherTesting {
         int size = objects.size();
         assertEquals(size, 4);
     }
-
 
 
 }
