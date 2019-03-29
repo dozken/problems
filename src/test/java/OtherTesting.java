@@ -13,6 +13,30 @@ import static org.junit.Assert.assertTrue;
 public class OtherTesting {
 
     @Test
+    public void testXORchar() {
+//        System.out.println((char)('A' ^ 'B' + 'A'));
+        String a = "abcde";
+        String b = "abcdex";
+        char[] A = a.toCharArray();
+        char[] B = b.toCharArray();
+
+        char sA = A[0];
+        char sB = A[0];
+        for (int i = 1; i < A.length; i++) {
+            sA ^= A[i];
+        }
+        System.out.println(sA);
+
+        for (int i = 1; i < B.length; i++) {
+            sB ^= B[i];
+        }
+        System.out.println(sB);
+
+        System.out.println((char) (sA ^ sB + 'a'));
+
+    }
+
+    @Test
     public void testLocalDate() {
         LocalDate date1 = LocalDate.now();
         LocalDate date2 = LocalDate.now();
@@ -29,8 +53,16 @@ public class OtherTesting {
 
     @Test
     public void charTest() {
-        System.out.println((char) ('A' - 1));
-        System.out.println(52 % 25);
+//        System.out.println((char) ('A' - 1));
+//        System.out.println(52 % 25);
+
+        if (true) {
+            System.out.println(1);
+        } else if (true) {
+            System.out.println(2);
+        } else if (true) {
+            System.out.println(3);
+        }
     }
 
     @Test
