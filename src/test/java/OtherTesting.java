@@ -13,6 +13,21 @@ import static org.junit.Assert.assertTrue;
 public class OtherTesting {
 
     @Test
+    public void streamReduce() {
+        List<BigDecimal> list = new ArrayList<>();
+        BigDecimal total = list.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+
+    }
+
+    @Test
+    public void string() {
+        System.out.println("01.2019".substring(0, 2));
+        System.out.println("01.2019".substring(3));
+
+        System.out.println(String.format("%04d", 200));
+    }
+
+    @Test
     public void testXORchar() {
 //        System.out.println((char)('A' ^ 'B' + 'A'));
         String a = "abcde";
@@ -54,7 +69,7 @@ public class OtherTesting {
     @Test
     public void charTest() {
 //        System.out.println((char) ('A' - 1));
-//        System.out.println(52 % 25);
+        System.out.println((char) ('1' + 1));
 
         if (true) {
             System.out.println(1);
