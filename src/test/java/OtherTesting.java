@@ -2,16 +2,65 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class OtherTesting {
 
+    @Test
+    public void testPriorityQueue() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+//        4,5,8,2, 3
+        pq.add(4);
+        pq.add(5);
+        pq.add(8);
+        pq.add(2);
+        pq.add(3);
+
+        while (!pq.isEmpty()) {
+            Integer poll = pq.peek();
+            System.out.println(poll);
+        }
+        System.out.println();
+//        Iterator<Integer> iterator = pq.iterator();
+//        while(iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
+//        System.out.println();
+//        while(!pq.isEmpty()){
+//            Integer poll = pq.poll();
+//            System.out.println(poll);
+//        }
+
+    }
+
+    public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
+
+        int tmp = 1;
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = tmp;
+            tmp *= nums[i];
+        }
+
+        tmp = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+
+        }
+        for (int i = nums.length - 1; i >= 0; i++) {
+            result[i] = tmp;
+            tmp *= nums[i];
+        }
+
+        return result;
+    }
+
+    @Test
+    public void climbing() {
+//        assertEquals(5, climbStairs(5));
+    }
     @Test
     public void streamReduce() {
         List<BigDecimal> list = new ArrayList<>();
