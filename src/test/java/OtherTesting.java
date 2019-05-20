@@ -2,19 +2,131 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class OtherTesting {
 
     @Test
+    public void testPriorityQueue() {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+//        4,5,8,2, 3
+        pq.add(4);
+        pq.add(5);
+        pq.add(8);
+        pq.add(2);
+        pq.add(3);
+
+        while (!pq.isEmpty()) {
+            Integer poll = pq.peek();
+            System.out.println(poll);
+        }
+        System.out.println();
+//        Iterator<Integer> iterator = pq.iterator();
+//        while(iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
+//        System.out.println();
+//        while(!pq.isEmpty()){
+//            Integer poll = pq.poll();
+//            System.out.println(poll);
+//        }
+
+    }
+
+    public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
+
+        int tmp = 1;
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = tmp;
+            tmp *= nums[i];
+        }
+
+        tmp = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+
+        }
+        for (int i = nums.length - 1; i >= 0; i++) {
+            result[i] = tmp;
+            tmp *= nums[i];
+        }
+
+        return result;
+    }
+
+    @Test
+    public void climbing() {
+//        assertEquals(5, climbStairs(5));
+    }
+    @Test
+    public void streamReduce() {
+        List<BigDecimal> list = new ArrayList<>();
+        BigDecimal total = list.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+
+    }
+
+    @Test
+    public void string() {
+        System.out.println("01.2019".substring(0, 2));
+        System.out.println("01.2019".substring(3));
+
+        System.out.println(String.format("%04d", 200));
+    }
+
+    @Test
+    public void testXORchar() {
+//        System.out.println((char)('A' ^ 'B' + 'A'));
+        String a = "abcde";
+        String b = "abcdex";
+        char[] A = a.toCharArray();
+        char[] B = b.toCharArray();
+
+        char sA = A[0];
+        char sB = A[0];
+        for (int i = 1; i < A.length; i++) {
+            sA ^= A[i];
+        }
+        System.out.println(sA);
+
+        for (int i = 1; i < B.length; i++) {
+            sB ^= B[i];
+        }
+        System.out.println(sB);
+
+        System.out.println((char) (sA ^ sB + 'a'));
+
+    }
+
+    @Test
+    public void testLocalDate() {
+        LocalDate date1 = LocalDate.now();
+        LocalDate date2 = LocalDate.now();
+
+        LocalDate date = LocalDate.now();
+
+        boolean check = (date.isEqual(date1) || date.isAfter(date1))
+                && (date.isEqual(date2) || date.isAfter(date2));
+
+        boolean check2 = date.compareTo(date1) >= 0 && date.compareTo(date2) <= 0;
+
+        assertTrue(check && check2);
+    }
+
+    @Test
     public void charTest() {
-        System.out.println((char) ('A' - 1));
-        System.out.println(52 % 25);
+//        System.out.println((char) ('A' - 1));
+        System.out.println((char) ('1' + 1));
+
+        if (true) {
+            System.out.println(1);
+        } else if (true) {
+            System.out.println(2);
+        } else if (true) {
+            System.out.println(3);
+        }
     }
 
     @Test
@@ -42,8 +154,9 @@ public class OtherTesting {
                 .filter(x -> x.getDate().compareTo(maxDate) < 1)
                 .max(Comparator.comparing(SalaryValue::getDate));
     }
+
     @Test
-    public void nullCheck(){
+    public void nullCheck() {
         int a = 5;
         // this will not compile !!!
 //        if(a == null)
@@ -92,7 +205,6 @@ public class OtherTesting {
         int size = objects.size();
         assertEquals(size, 4);
     }
-
 
 
 }

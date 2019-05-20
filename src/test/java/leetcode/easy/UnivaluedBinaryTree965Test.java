@@ -1,5 +1,6 @@
 package leetcode.easy;
 
+import leetcode.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,12 +22,12 @@ class UnivaluedBinaryTree965Test {
     void isUnivalTree() {
 //        [9,9,6,9,9]
 
-        UnivaluedBinaryTree965.TreeNode tree = new UnivaluedBinaryTree965.TreeNode(9);
-        tree.left = new UnivaluedBinaryTree965.TreeNode(9);
-        tree.left.left = new UnivaluedBinaryTree965.TreeNode(9);
-        tree.left.right = new UnivaluedBinaryTree965.TreeNode(9);
+        TreeNode tree = new TreeNode(9);
+        tree.left = new TreeNode(9);
+        tree.left.left = new TreeNode(9);
+        tree.left.right = new TreeNode(9);
 
-        tree.right = new UnivaluedBinaryTree965.TreeNode(6);
+        tree.right = new TreeNode(6);
 
         assertFalse(test.isUnivalTree(tree));
 
