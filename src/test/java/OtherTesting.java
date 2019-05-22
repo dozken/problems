@@ -70,6 +70,7 @@ public class OtherTesting {
 
     @Test
     public void string() {
+        System.out.println("".split("-")[0]);
         System.out.println("01.2019".substring(0, 2));
         System.out.println("01.2019".substring(3));
 
