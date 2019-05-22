@@ -10,6 +10,33 @@ import static org.junit.Assert.assertTrue;
 public class OtherTesting {
 
     @Test
+    public void testNegativeInt() {
+//        System.out.println(-129 !=  -129);
+//        assertEquals(-129, -129);
+
+        List<Integer> vals = new ArrayList<>();
+
+        vals.add(-129);
+        vals.add(-129);
+
+        int i = 0, j = vals.size() - 1;
+        while (i < j) {
+            System.out.println(vals);
+            System.out.println(i + " - " + j);
+            System.out.println(vals.get(i) != vals.get(j));
+            System.out.println(vals.get(i) + " | " + vals.get(j));
+            if (vals.get(i) != vals.get(j)) {
+                System.out.println("d");
+            }
+
+            i++;
+            j--;
+        }
+
+        System.out.println("t");
+
+    }
+    @Test
     public void testPriorityQueue() {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 //        4,5,8,2, 3

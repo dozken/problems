@@ -1,10 +1,8 @@
 package leetcode.easy;
 
 import org.junit.Test;
-import org.testng.annotations.ITestAnnotation;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class LastStoneWeight1046 {
