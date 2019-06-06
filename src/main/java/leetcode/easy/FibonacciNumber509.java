@@ -6,25 +6,39 @@ public class FibonacciNumber509 {
     //Memory Usage: 35.1 MB, less than 98.82% of Java online submissions for Fibonacci Number.
     // time O(n)
     // space O(1)
-    int fib(int N) {
+    public int fib(int N) {
         if (N < 2)
             return N;
 
         int a = 0;
         int b = 1;
-        int result = 0;
+        int r = 0;
         for (int i = 2; i <= N; i++) {
-            result = a + b;
+            r = a + b;
             a = b;
-            b = result;
+            b = r;
         }
 
-        return result;
+        return r;
     }
 
     public int fibB(int N) {
-        if (N == 0) return 0;
-        if (N == 1) return 1;
+        if (N < 2) return N;
+
+        int[] dp = new int[N + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+
+        for (int i = 2; i <= N; i++) {
+            dp[i] = dp[i - 2] + dp[i - 1];
+        }
+
+        return dp[N];
+
+    }
+
+    public int fibC(int N) {
+        if (N < 2) return N;
         return fib(N - 1) + fib(N - 2);
     }
 

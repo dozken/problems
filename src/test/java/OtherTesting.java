@@ -97,11 +97,14 @@ public class OtherTesting {
 
     @Test
     public void string() {
-        System.out.println("".split("-")[0]);
-        System.out.println("01.2019".substring(0, 2));
-        System.out.println("01.2019".substring(3));
+        System.out.println(Arrays.toString("asdasd".split("asd")));
+        System.out.println("01.2019".substring(7, 7));
+        System.out.println("01.2019".substring(2));
+
 
         System.out.println(String.format("%04d", 200));
+
+
     }
 
     @Test
