@@ -1,5 +1,6 @@
 package leetcode.medium;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -8,6 +9,35 @@ import java.util.PriorityQueue;
  * On 16-Jun-19.
  */
 public class KClosestPointstoOrigin973 {
+
+
+    public int[][] kClosestA(int[][] points, int K) {
+        if(points.length < K){
+            throw new IllegalArgumentException("illegal points");
+        }
+
+
+        Arrays.sort(points, Comparator.comparingInt((int[] a) -> (a[0] * a[0] + a[1] * a[1])));
+        int[][] result = new int[K][];
+        for(int i = 0; i < K; i++){
+            result[i] = points[i];
+        }
+        return result;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     class Distance {
         private double distance;
         private int[] point;
@@ -60,4 +90,7 @@ public class KClosestPointstoOrigin973 {
     private Comparator<Distance> getDistanceComparator() {
         return Comparator.comparingDouble(Distance::getDistance);
     }
+
+
+
 }
