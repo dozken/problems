@@ -2,9 +2,9 @@ package leetcode.easy;
 
 public class ListNode {
     public int val;
-    ListNode next;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 }
