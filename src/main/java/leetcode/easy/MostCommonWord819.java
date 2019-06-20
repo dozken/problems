@@ -34,7 +34,7 @@ public class MostCommonWord819 {
         }
         return result;
     }
-    
+
 
     public String mostCommonWordB(String paragraph, String[] banned) {
         Set<String> bannedWord = new HashSet<>(Arrays.asList(banned));

@@ -101,6 +101,8 @@ public class OtherTesting {
         System.out.println("01.2019".substring(7, 7));
         System.out.println("01.2019".substring(2));
 
+        System.out.println("".chars());
+
 
         System.out.println(String.format("%04d", 200));
 
