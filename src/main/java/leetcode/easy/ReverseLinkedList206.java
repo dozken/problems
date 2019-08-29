@@ -3,7 +3,6 @@ package leetcode.easy;
 class ReverseLinkedList206 {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
-        ListNode result = head;
         while (head != null) {
             ListNode next = head.next;
             head.next = prev;

@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -8,6 +9,94 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class OtherTesting {
+
+    @Test
+    public void zeroleading(){
+
+        System.out.println(String.format("%0"));
+
+    }
+
+    @Test
+    public void map() {
+        Map<Integer, String> map = new HashMap<>();
+        map.getOrDefault(1, "as");
+        map.putIfAbsent(1, "v");
+        map.putIfAbsent(1, "s");
+
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    @Test
+    public void streamTest() {
+
+
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<String> strings = Arrays.asList("a", "b", "c");
+
+//        strings.stream()
+//                .flatMap(ss -> integers.stream().map(i -> ss + " " + i)
+//                ).forEach(System.out::println);
+
+
+        Set<Integer> set = new HashSet<>();
+        boolean hasDuplicate = integers.stream().anyMatch(x-> !set.add(x));
+        System.out.println(hasDuplicate);
+//        strings.stream().forEach(s -> {
+//            integers.stream().forEach(i -> {
+//                System.out.println(s + " " + i);
+//            });
+//
+//        });
+
+
+    }
+
+    @Test
+    public void list() {
+        List<String> list1 = Arrays.asList("1", "2", "3", "4");
+        List<String> list2 = Arrays.asList("1", "2", "3", "4");
+        List<String> list3 = Arrays.asList("1", "2", "4", "3");
+
+        Assert.assertEquals(list1, list2);
+        Assert.assertNotSame(list1, list2);
+        Assert.assertNotEquals(list1, list3);
+    }
+
+    @Test
+    public void heap() {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+        for (int i : Arrays.asList(1, 5, 3, 9, 5)) {
+            if (minHeap.size() > 3) {
+                minHeap.remove();
+            }
+            minHeap.add(i);
+
+        }
+        while (!minHeap.isEmpty()) {
+            System.out.println(minHeap.poll());
+        }
+
+        System.out.println();
+
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
+
+        for (int i : Arrays.asList(1, 5, 3, 9, 5)) {
+            if (maxHeap.size() > 3) {
+                maxHeap.remove();
+            }
+            maxHeap.add(i);
+
+        }
+
+        while (!maxHeap.isEmpty()) {
+            System.out.println(maxHeap.poll());
+        }
+
+    }
 
     @Test
     public void testNegativeInt() {
@@ -36,6 +125,7 @@ public class OtherTesting {
         System.out.println("t");
 
     }
+
     @Test
     public void testPriorityQueue() {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
@@ -88,6 +178,7 @@ public class OtherTesting {
     public void climbing() {
 //        assertEquals(5, climbStairs(5));
     }
+
     @Test
     public void streamReduce() {
         List<BigDecimal> list = new ArrayList<>();
