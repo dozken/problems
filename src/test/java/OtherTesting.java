@@ -11,6 +11,23 @@ import static org.junit.Assert.assertTrue;
 public class OtherTesting {
 
     @Test
+    public void minmaxheap(){
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        pq.add(10);
+        pq.add(20);
+        pq.add(5);
+
+        System.out.println(pq.poll());
+
+        // Printing the top element and removing it
+        // from the PriorityQueue container
+        System.out.println(pq.poll());
+
+        // Printing the top element again
+        System.out.println(pq.poll());
+    }
+    @Test
     public void zeroleading(){
 
         System.out.println(String.format("%0"));
