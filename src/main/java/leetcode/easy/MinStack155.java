@@ -19,6 +19,42 @@ public class MinStack155 {
 
     class MinStack {
 
+        class Node {
+            Node prev;
+            Node next;
+            int min;
+            int val;
+        }
+
+        Node node;
+
+        public MinStack() {
+        }
+
+        public void push(int val) {
+            node = new Node();
+            node.val = val;
+            node.min = node.prev == null ? val : Math.min(node.prev.min, node.min);
+
+            node.prev = node;
+            node = node.next;
+        }
+
+        public void pop() {
+            node = node.prev;
+        }
+
+        public int top() {
+            return node.val;
+        }
+
+        public int getMin() {
+            return node.min;
+        }
+    }
+
+    class MinStack1 {
+
         private int min;
         private Node head;
         private Node tail;
@@ -26,7 +62,7 @@ public class MinStack155 {
         /**
          * initialize your data structure here.
          */
-        public MinStack() {
+        public MinStack1() {
             min = Integer.MIN_VALUE;
         }
 
